@@ -20,6 +20,7 @@ M.colorscheme2dir = {
   onedarkpro = "onedarkpro.nvim",
   monokai = "monokai.nvim",
   material = "material.nvim",
+  dracula = "dracula.nvim",
 }
 
 M.gruvbox8 = function()
@@ -149,5 +150,5 @@ M.rand_colorscheme = function()
   end
 end
 
--- Load a random colorscheme
-M.rand_colorscheme()
+vim.cmd([[colorscheme dracula]])
+

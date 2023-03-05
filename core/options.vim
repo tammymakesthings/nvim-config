@@ -19,8 +19,8 @@ set updatetime=500  " For CursorHold events
 " Clipboard settings, always use clipboard for all delete, yank, change, put
 " operation, see https://stackoverflow.com/q/30691466/6064933
 if !empty(provider#clipboard#Executable())
-  set clipboard+=unnamedplus
-endif
+   set clipboard+=unnamedplus
+ endif
 
 " Disable creating swapfiles, see https://stackoverflow.com/q/821902/6064933
 set noswapfile
@@ -44,9 +44,9 @@ set backup  " create backup for files
 set backupcopy=yes  " copy the original file to backupdir and overwrite it
 
 " General tab settings
-set tabstop=2       " number of visual spaces per TAB
-set softtabstop=2   " number of spaces in tab when editing
-set shiftwidth=2    " number of spaces to use for autoindent
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set shiftwidth=4    " number of spaces to use for autoindent
 set expandtab       " expand tab to spaces so that tabs are spaces
 
 " Set matching pairs of characters and highlight matching brackets
@@ -59,7 +59,7 @@ set ignorecase smartcase
 
 " File and script encoding settings for vim
 set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencodings=utf-8
 
 " Break line at predefined characters
 set linebreak
@@ -86,7 +86,7 @@ set fileformats=unix,dos  " Fileformats to use for new files
 set confirm
 
 set visualbell noerrorbells  " Do not use visual and errorbells
-set history=500  " The number of command and search history to keep
+set history=5000  " The number of command and search history to keep
 
 " Use list mode and customized listchars
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣

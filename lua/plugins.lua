@@ -384,8 +384,6 @@ packer.startup {
   },
 }
 
-vim.cmd([[colorscheme dracula]])
-
 -- For fresh install, we need to install plugins. Otherwise, we just need to require `packer_compiled.lua`.
 if fresh_install then
   -- We run packer.sync() here, because only after packer.startup, can we know which plugins to install.
