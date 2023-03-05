@@ -230,16 +230,20 @@ keymap.set("n", "<leader>cb", function()
   local blink_times = 7
   local timer = uv.new_timer()
 
-  timer:start(0, 100, vim.schedule_wrap(function()
-    vim.cmd[[
+  timer:start(
+    0,
+    100,
+    vim.schedule_wrap(function()
+      vim.cmd([[
       set cursorcolumn!
       set cursorline!
-    ]]
+    ]])
 
-    if cnt == blink_times then
-      timer:close()
-    end
+      if cnt == blink_times then
+        timer:close()
+      end
 
-    cnt = cnt + 1
-  end))
+      cnt = cnt + 1
+    end)
+  )
 end)

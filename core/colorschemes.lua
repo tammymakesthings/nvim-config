@@ -95,27 +95,27 @@ M.catppuccin = function()
 end
 
 M.rose_pine = function()
-  require('rose-pine').setup({
+  require("rose-pine").setup {
     --- @usage 'main' | 'moon'
-    dark_variant = 'moon',
-  })
+    dark_variant = "moon",
+  }
 
   -- set colorscheme after options
-  vim.cmd('colorscheme rose-pine')
+  vim.cmd("colorscheme rose-pine")
 end
 
 M.onedarkpro = function()
   -- set colorscheme after options
-  vim.cmd('colorscheme onedark_vivid')
+  vim.cmd("colorscheme onedark_vivid")
 end
 
 M.monokai = function()
-  vim.cmd('colorscheme monokai_pro')
+  vim.cmd("colorscheme monokai_pro")
 end
 
-M.material = function ()
+M.material = function()
   vim.g.material_style = "oceanic"
-  vim.cmd('colorscheme material')
+  vim.cmd("colorscheme material")
 end
 
 --- Use a random colorscheme from the pre-defined list of colorschemes.

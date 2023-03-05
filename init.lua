@@ -4,24 +4,8 @@
 -- I would not recommend cloning this repo and replace your own config. Good configurations are personal,
 -- built over time with a lot of polish.
 --
--- Author: Jiedong Hao
--- Email: jdhao@hotmail.com
--- Blog: https://jdhao.github.io/
--- GitHub: https://github.com/jdhao
--- StackOverflow: https://stackoverflow.com/users/6064933/jdhao
-
 local api = vim.api
 local utils = require("utils")
-
--- check if we have the latest stable version of nvim
-local expected_ver = "0.8.3"
-local nvim_ver = utils.get_nvim_version()
-
-if nvim_ver ~= expected_ver then
-  local msg = string.format("Unsupported nvim version: expect %s, but got %s instead!", expected_ver, nvim_ver)
-  api.nvim_err_writeln(msg)
-  return
-end
 
 local core_conf_files = {
   "globals.lua", -- some global settings

@@ -46,9 +46,12 @@ packer.startup {
     -- it is recommended to put impatient.nvim before any other plugins
     use { "lewis6991/impatient.nvim", config = [[require('impatient')]] }
 
+    use { "Mofiqul/dracula.nvim" }
+
     use { "wbthomason/packer.nvim", opt = true }
 
     use { "onsails/lspkind-nvim", event = "VimEnter" }
+
     -- auto-completion engine
     use { "hrsh7th/nvim-cmp", after = "lspkind-nvim", config = [[require('config.nvim-cmp')]] }
 
@@ -132,7 +135,7 @@ packer.startup {
     use { "EdenEast/nightfox.nvim", opt = true }
     use { "rebelot/kanagawa.nvim", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
-    use({ "rose-pine/neovim", as = 'rose-pine', opt = true })
+    use { "rose-pine/neovim", as = "rose-pine", opt = true }
     use { "olimorris/onedarkpro.nvim", opt = true }
     use { "tanvirtin/monokai.nvim", opt = true }
     use { "marko-cerovac/material.nvim", opt = true }
@@ -143,17 +146,25 @@ packer.startup {
       "nvim-lualine/lualine.nvim",
       event = "VimEnter",
       cond = firenvim_not_active,
+      options = {
+        theme = "dracula-nvim",
+      },
       config = [[require('config.statusline')]],
     }
 
-    use { "akinsho/bufferline.nvim", event = "VimEnter",
+    use {
+      "akinsho/bufferline.nvim",
+      event = "VimEnter",
       cond = firenvim_not_active,
-      config = [[require('config.bufferline')]] }
+      config = [[require('config.bufferline')]],
+    }
 
     -- fancy start screen
-    use { "glepnir/dashboard-nvim", event = "VimEnter",
+    use {
+      "glepnir/dashboard-nvim",
+      event = "VimEnter",
       cond = firenvim_not_active,
-      config = [[require('config.dashboard-nvim')]]
+      config = [[require('config.dashboard-nvim')]],
     }
 
     use {
@@ -209,13 +220,13 @@ packer.startup {
     use { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } }
 
     -- better UI for some nvim actions
-    use {'stevearc/dressing.nvim'}
+    use { "stevearc/dressing.nvim" }
 
     -- Manage your yank history
-    use({
+    use {
       "gbprod/yanky.nvim",
-      config = [[require('config.yanky')]]
-    })
+      config = [[require('config.yanky')]],
+    }
 
     -- Handy unix command inside Vim (Rename, Move etc.)
     use { "tpope/vim-eunuch", cmd = { "Rename", "Delete" } }
@@ -372,6 +383,8 @@ packer.startup {
     compile_path = packer_util.join_paths(fn.stdpath("data"), "site", "lua", "packer_compiled.lua"),
   },
 }
+
+vim.cmd([[colorscheme dracula]])
 
 -- For fresh install, we need to install plugins. Otherwise, we just need to require `packer_compiled.lua`.
 if fresh_install then
