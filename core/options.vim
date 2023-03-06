@@ -80,7 +80,7 @@ set mousescroll=ver:1,hor:6
 " Disable showing current mode on command line since statusline plugins can show it.
 set noshowmode
 
-set fileformats=unix,dos  " Fileformats to use for new files
+set fileformats=unix   " Fileformats to use for new files
 
 " Ask for confirmation when handling unsaved or read-only files
 set confirm
@@ -129,7 +129,7 @@ set winblend=0  " pseudo transparency for floating window
 " Insert mode key word completion setting
 set complete+=kspell complete-=w complete-=b complete-=u complete-=t
 
-set spelllang=en,cjk  " Spell languages
+set spelllang=en  " Spell languages
 set spellsuggest+=9  " show 9 spell suggestions at most
 
 " Align indent to next multiple value of shiftwidth. For its meaning,
